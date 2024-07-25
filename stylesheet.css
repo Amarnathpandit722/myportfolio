@@ -34,6 +34,9 @@ body {
   opacity: 0;
   animation: slideRight 1s ease forwards;
 }
+.navbar{
+  display: flex;
+}
 .navbar a {
   display: inline-block;
   font-size: 25px;
@@ -45,6 +48,18 @@ body {
   opacity: 0;
   animation: slideTop 1s ease forwards;
   animation-delay: calc(0.2s * var(--i));
+}
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  font-size: 1.5em;
+  color: #fff;
+}
+#close-btn {
+  display: none;
 }
 
 .navbar a:hover {
@@ -60,7 +75,9 @@ body {
   background-position: center;
   display: flex;
   align-items: center;
-  padding: 70px 10% 0;
+  padding: 90px 5% 10px 5%;
+  padding-right: 5px; 
+  margin-bottom: 20px;
 }
 .home-content {
   font-size: 32px;
@@ -111,7 +128,7 @@ body {
   opacity: 0;
   animation: slideRight 1s ease forwards;
   animation-delay: calc(0.2s * var(--i));
-  margin: 30px 15px 30px 0;
+  margin: 20px 25px 20px 0px;
 }
 .home-sci a:hover {
   background: aqua;
@@ -197,7 +214,8 @@ body {
 .subtitle {
   text-align: center;
   font-size: 25px;
-  padding-bottom: 70px;
+  padding-bottom: 40px;
+  margin-top: 20px;
 }
 .subtitle h1 {
   color: beige;
@@ -268,12 +286,13 @@ body {
 section {
   display: flex;
   flex-wrap: wrap;
+  margin:20px;
 }
 .contianer1 {
   width: 600px;
   height: 500px;
   padding: 75px 75px;
-  margin-left: 100px;
+  margin-left: 10px;
 }
 
 .heading1 {
@@ -396,13 +415,13 @@ progress-line.javascript::after {
   }
 }
 .radial-bars {
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 .radial-bars .radial-bar {
   width: 100%;
@@ -767,8 +786,9 @@ form textarea {
   }
 }
 
+
 @media screen
-    and (max-device-width: 640px) {
+    and (max-width: 640px) {
     .header {
       
         background-color: rgb(47, 215, 252);
@@ -778,21 +798,60 @@ form textarea {
       max-height: none;
       top: 0;
       position: relative;
-      float: right;
+      float: left;
       width: fit-content;
       background-color: transparent;
+      display: none;
+    flex-direction: column;
     }
+    .navbar a {
+    padding: 15px;
+    border-top: 1px solid #444;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .show {
+    display: flex;
+  }
+
+  #open-btn.show {
+    display: none;
+  }
+
+  #close-btn.show {
+    display: block;
+  }
+
+  #close-btn {
+    display: none;
+  }
 }
 @media screen
-    and (max-device-width: 640px) {
+    and (max-width: 640px) {
     .home {
-      
+      padding-right: 20px;
+      padding-left: 10px;
         background-color: rgb(47, 215, 252);
         color: black;
     }
+    .home-sci{
+      display: none;
+      margin: 0px;
+
+    }
+    .home-sci a{
+      margin-top: 20px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
 }
 @media screen
-    and (max-device-width: 640px) {
+    and (max-width: 640px) {
     .about {
       
         background-color: rgb(47, 215, 252);
@@ -802,28 +861,35 @@ form textarea {
     
 }
 @media screen
-    and (max-device-width: 640px) {
+    and (max-width: 640px) {
     .services {
       
         display: none;
     }
-}
-@media screen
-    and (max-device-width: 640px) {
-    .subtitle {
-      
-        margin: 10px;
+    .btn-box{
+      margin-top: 10px;
+    
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 }
 @media screen
-    and (max-device-width: 640px) {
+    and (max-width: 640px) {
+    .subtitle {
+      
+        margin-top: 5px;
+    }
+}
+@media screen
+    and (max-width: 640px) {
     .contianer1 {
       display: inline;
       float: left;
         
     }
     .heading1{
-      font-size: 16px;
+      font-size: 12px;
     }
     .text{
       margin-top: 10px;
@@ -831,8 +897,30 @@ form textarea {
     }
 
 }
+@media screen and (max-width: 600px) {
+  .about-text {
+    width: 100%;
+    font-size: small;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 10px;
+  }
+
+  .about-img {
+    width: 100%;
+  }
+
+  .about-img img {
+    width: 100%;
+    margin-left: 10px;
+    height: auto;
+  }
+  .about{
+    padding: 5px;
+  }
+}
+
 @media screen
-    and (max-device-width: 640px) {
+    and (max-width: 640px) {
     .porfolio-content {
       width: 40%;
   display: flex;
@@ -857,7 +945,7 @@ form textarea {
   }
 
 @media screen
-    and (max-device-width: 480px) 
+    and (max-width: 600px) 
     and (orientation: portrait)    {
     .contact {
       display: inline;
@@ -865,10 +953,19 @@ form textarea {
         margin-top: 100px;
         width: 100%;
     }
- .contact-text > h2{
-  width: 50%;
-  font-size: 16px;
+ .contact-text{
+  /* width: 50%;
+  font-size: 16px; */
+  display: none;
  }
+
+ .contact-form {
+    width: 100%;
+    margin-right: 20px;
+    padding-right: 10px;
+    justify-content: center;
+    align-items: center;
+  }
   
     .last-text{
       width: 100%;

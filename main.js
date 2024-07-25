@@ -1,5 +1,5 @@
 var typed= new Typed(".text",{
-    strings :['Frontend Developer','Backend Developer', 'Java Full Stack Web Developer'],
+    strings :['Frontend Developer','Backend Developer', 'Java Full Stack Developer'],
     typeSpeed:50,
     backSpeed:50,
     backDelay:100,
@@ -23,3 +23,19 @@ var typed= new Typed(".text",{
       })
       .catch(error => console.error('Error!', error.message))
   })
+
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+    const openBtn = document.getElementById('open-btn');
+    const closeBtn = document.getElementById('close-btn');
+  
+    menuToggle.addEventListener('click', function () {
+      navbar.classList.toggle('show');
+      openBtn.classList.toggle('show');
+      closeBtn.classList.toggle('show');
+    });
+  });
+  
